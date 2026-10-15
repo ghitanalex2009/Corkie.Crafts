@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corkie Crafts | Upcycled Cork Home Decor & Artisanal Gifts</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        merlot: '#4A121A',
+                        'merlot-dark': '#380C13',
+                        'merlot-light': '#5E1B23',
+                        gold: '#C5A059',
+                        'gold-light': '#D4B678',
+                        'gold-dark': '#A3803C',
+                        linen: '#FDFBF7',
+                        'linen-dark': '#F4EFE6',
+                        cork: '#B8860B',
+                        charcoal: '#2C2A29'
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FDFBF7;
+            color: #2C2A29;
+            font-family: 'Montserrat', sans-serif;
+        }
+        h1, h2, h3, h4, .font-serif-title {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .bg-pattern {
+            background-color: #FDFBF7;
+            background-image: radial-gradient(#C5A059 0.5px, transparent 0.5px), radial-gradient(#C5A059 0.5px, #FDFBF7 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-opacity: 0.1;
+        }
+        .gold-border {
+            border-color: #C5A059;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #C5A059 0%, #D4B678 50%, #A3803C 100%);
+        }
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #C5A059 0%, #E6C786 50%, #A3803C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(253, 251, 247, 0.85);
+            backdrop-filter: blur(8px);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4A121A;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C5A059;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold selection:text-merlot">
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-3 pointer-events-none"></div>
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-merlot text-linen text-xs md:text-sm py-2.5 px-4 text-center border-b border-gold/30 tracking-wider">
+        <p class="font-medium">
+            Handcrafted with Sustainable Cork in St Albans, Hertfordshire &bull; 
+            <a href="https://www.etsy.com/uk/shop/CorkieCrafts" target="_blank" rel="noopener noreferrer" class="underline decoration-gold underline-offset-4 hover:text-gold transition-colors ml-1">
+                Explore Our Official Etsy Store <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i>
+            </a>
+        </p>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-linen/95 backdrop-blur-md border-b border-gold/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Pure Typographic Logo -->
+                <a href="#" class="group flex flex-col items-start">
+                    <span class="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-merlot group-hover:text-gold transition-colors">
+                        Corkie Crafts
+                    </span>
+                    <span class="text-[10px] tracking-[0.25em] uppercase text-gold font-semibold -mt-1 pl-0.5">
+                        St Albans &bull; Est. Sustainable
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-medium">
+                    <a href="#about" class="text-charcoal hover:text-merlot transition-colors py-1 border-b-2 border-transparent hover:border-gold">Our Heritage</a>
+                    <a href="#core-collection" class="text-charcoal hover:text-merlot transition-colors py-1 border-b-2 border-transparent hover:border-gold">Core Collection</a>
+                    <a href="#christmas-collection" class="text-charcoal hover:text-merlot transition-colors py-1 border-b-2 border-transparent hover:border-gold">Christmas Decor</a>
+                    <a href="#seasonal-teasers" class="text-charcoal hover:text-merlot transition-colors py-1 border-b-2 border-transparent hover:border-gold">Upcoming Seasons</a>
+                    <a href="#contact" class="text-charcoal hover:text-merlot transition-colors py-1 border-b-2 border-transparent hover:border-gold">Contact</a>
+                </nav>
+
+                <!-- Navigation Actions -->
+                <div class="flex items-center space-x-4">
+                    <a href="https://www.etsy.com/uk/shop/CorkieCrafts" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs tracking-widest uppercase font-semibold text-linen bg-merlot hover:bg-gold hover:text-merlot transition-all duration-300 rounded-sm border border-gold/40 shadow-sm">
+                        <i class="fa-brands fa-etsy text-base mr-2"></i> Visit Etsy Shop
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" type="button" class="md:hidden p-2 text-merlot hover:text-gold focus:outline-none" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-linen border-b border-gold/30 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-sm uppercase tracking-wider text-charcoal hover:text-merlot font-medium border-b border-gold/10">Our Heritage</a>
+            <a href="#core-collection" class="block py-2 text-sm uppercase tracking-wider text-charcoal hover:text-merlot font-medium border-b border-gold/10">Core Collection</a>
+            <a href="#christmas-collection" class="block py-2 text-sm uppercase tracking-wider text-charcoal hover:text-merlot font-medium border-b border-gold/10">Christmas Decor</a>
+            <a href="#seasonal-teasers" class="block py-2 text-sm uppercase tracking-wider text-charcoal hover:text-merlot font-medium border-b border-gold/10">Upcoming Seasons</a>
+            <a href="#contact" class="block py-2 text-sm uppercase tracking-wider text-charcoal hover:text-merlot font-medium border-b border-gold/10">Contact</a>
+            <div class="pt-2">
+                <a href="https://www.etsy.com/uk/shop/CorkieCrafts" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs tracking-widest uppercase font-semibold text-linen bg-merlot hover:bg-gold hover:text-merlot transition-all rounded-sm">
+                    <i class="fa-brands fa-etsy text-base mr-2"></i> Visit Etsy Shop
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-linen overflow-hidden py-16 sm:py-24 border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 bg-merlot/5 border border-gold/40 rounded-full text-xs font-medium text-merlot tracking-wider uppercase">
+                        <span class="w-2 h-2 rounded-full bg-gold inline-block"></span>
+                        <span>Sustainable Upcycled Living</span>
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-none tracking-tight text-merlot">
+                        Timeless Warmth for <br class="hidden sm:inline">
+                        <span class="italic font-light text-gold-dark">Modern Interiors.</span>
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg text-charcoal/80 max-w-2xl font-light leading-relaxed mx-auto lg:mx-0">
+                        Elevate your sanctuary with artisanal, upcycled cork home decor. Handcrafted in St Albans, Hertfordshire with environmental respect and old-world elegance.
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#core-collection" class="w-full sm:w-auto px-8 py-4 text-xs uppercase tracking-widest font-semibold text-linen bg-merlot hover:bg-gold hover:text-merlot transition-all duration-300 rounded-sm shadow-md text-center">
+                            Explore Collections
+                        </a>
+                        <a href="https://www.etsy.com/uk/shop/CorkieCrafts" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 text-xs uppercase tracking-widest font-semibold text-merlot bg-transparent border border-merlot hover:bg-merlot hover:text-linen transition-all duration-300 rounded-sm text-center flex items-center justify-center gap-2">
+                            <span>Shop On Etsy</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Micro Badge -->
+                    <div class="pt-6 border-t border-gold/20 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="font-serif text-xl sm:text-2xl text-merlot font-bold">100%</p>
+                            <p class="text-[11px] text-charcoal/70 uppercase tracking-wider">Upcycled Cork</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-xl sm:text-2xl text-merlot font-bold">St Albans</p>
+                            <p class="text-[11px] text-charcoal/70 uppercase tracking-wider">Handmade UK</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-xl sm:text-2xl text-merlot font-bold">Artisanal</p>
+                            <p class="text-[11px] text-charcoal/70 uppercase tracking-wider">Unique Craft</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Frame -->
+                        <div class="absolute -inset-3 border-2 border-gold/40 rounded-sm transform translate-x-2 translate-y-2 pointer-events-none"></div>
+                        <div class="relative bg-linen-dark p-2 border border-gold/30 rounded-sm shadow-xl overflow-hidden group">
+                            <img src="https://i.pinimg.com/736x/d4/00/4a/d4004a7093a12236af710ae0c8c97c66.jpg" 
+                                 referrerpolicy="no-referrer" 
+                                 alt="Cork World Map by Corkie Crafts" 
+                                 class="w-full h-[420px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700">
+                            
+                            <div class="absolute bottom-4 left-4 right-4 bg-merlot/90 backdrop-blur-sm text-linen p-4 border border-gold/30 rounded-sm">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <p class="text-xs uppercase tracking-widest text-gold">Featured Craft</p>
+                                        <h3 class="font-serif text-xl font-medium">Cork World Map</h3>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="line-through text-xs text-linen/60 font-light">£50.00</span>
+                                        <span class="block text-lg font-serif font-bold text-gold">£35.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Highlight Strip -->
+    <section class="bg-merlot text-linen py-12 border-b border-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gold/20">
+                
+                <div class="pt-4 md:pt-0 px-4 flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/40 flex items-center justify-center text-gold mb-4">
+                        <i class="fa-solid fa-leaf text-xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-normal text-gold mb-2">Sustainable & Eco-Conscious</h3>
+                    <p class="text-xs text-linen/80 font-light leading-relaxed max-w-xs">
+                        Every creation repurposes wine and bottle corks into luxury decor, breathing new life into natural oak bark.
+                    </p>
+                </div>
+
+                <div class="pt-6 md:pt-0 px-4 flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/40 flex items-center justify-center text-gold mb-4">
+                        <i class="fa-solid fa-hands-holding text-xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-normal text-gold mb-2">St Albans Craftsmanship</h3>
+                    <p class="text-xs text-linen/80 font-light leading-relaxed max-w-xs">
+                        Locally designed and meticulously crafted by hand in Hertfordshire, ensuring each item carries authentic character.
+                    </p>
+                </div>
+
+                <div class="pt-6 md:pt-0 px-4 flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/40 flex items-center justify-center text-gold mb-4">
+                        <i class="fa-solid fa-gem text-xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-normal text-gold mb-2">Old Money Aesthetic</h3>
+                    <p class="text-xs text-linen/80 font-light leading-relaxed max-w-xs">
+                        Rich textures, organic warmth, and timeless elegance designed to harmonize perfectly with refined, modern interiors.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Collection Section -->
+    <section id="core-collection" class="py-20 bg-linen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.2em] text-gold font-semibold">Artisanal Living</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-merlot font-normal mt-1 mb-4">Core Home Collection</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto mb-4"></div>
+                <p class="text-sm text-charcoal/80 font-light">
+                    Handcrafted statement pieces and tactile everyday accents designed for enduring style and environmental harmony.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Product 1: Cork World Map -->
+                <div class="bg-linen-dark border border-gold/30 rounded-sm overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-64 overflow-hidden bg-merlot/5">
+                        <img src="https://i.pinimg.com/736x/d4/00/4a/d4004a7093a12236af710ae0c8c97c66.jpg" 
+                             referrerpolicy="no-referrer" 
+                             alt="Cork World Map" 
+                             class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-merlot text-linen text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 border border-gold/40">
+                            Sale
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="mb-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Wall Decor</span>
+                            <h3 class="font-serif text-2xl text-merlot font-medium">Cork World Map</h3>
+                        </div>
+                        <p class="text-xs text-charcoal/70 font-light mb-6 flex-grow">
+                            An exquisite focal point for study or lounge. Perfect for pinning travels and memories onto sustainable cork canvas.
+                        </p>
+                        <div class="pt-4 border-t border-gold/20 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-charcoal/50 line-through">£50.00</span>
+                                <span class="block text-2xl font-serif text-merlot font-bold">£35.00</span>
+                            </div>
+                            <a href="https://www.etsy.com/uk/shop/CorkieCrafts" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 text-xs uppercase tracking-widest font-semibold text-merlot bg-transparent border border-merlot hover:bg-merlot hover:text-linen transition-colors rounded-sm inline-flex items-center gap-1">
+                                <span>Buy on Etsy</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Coasters x4 Pack -->
+                <div class="bg-linen-dark border border-gold/30 rounded-sm overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-64 overflow-hidden bg-merlot/10 flex items-center justify-center p-6 text-center">
+                        <!-- SVG Craft Vector Asset -->
+                        <div class="w-32 h-32 rounded-full border-4 border-dashed border-gold/60 flex items-center justify-center bg-merlot/5 group-hover:rotate-45 transition-transform duration-700">
+                            <i class="fa-solid fa-wine-glass text-5xl text-merlot"></i>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-merlot text-linen text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 border border-gold/40">
+                            4 Pack
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="mb-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Tableware</span>
+                            <h3 class="font-serif text-2xl text-merlot font-medium">Coasters (x4 Pack)</h3>
+                        </div>
+                        <p class="text-xs text-charcoal/70 font-light mb-6 flex-grow">
+                            Durable, naturally absorbent, and elegant set of four upcycled cork drink coasters. Protects surfaces with timeless charm.
+                        </p>
+                        <div class="pt-4 border-t border-gold/20 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-charcoal/50 line-through">£24.00</span>
+                                <span class="block text-2xl font-serif text-merlot font-bold">£16.00</span>
+                            </div>
+                            <a href="https://www.etsy.com/uk/shop/CorkieCrafts" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 text-xs uppercase tracking-widest font-semibold text-merlot bg-transparent border border-merlot hover:bg-merlot hover:text-linen transition-colors rounded-sm inline-flex items-center gap-1">
+                                <span>Buy on Etsy</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Pinboards -->
+                <div class="bg-linen-dark border border-gold/30 rounded-sm overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-64 overflow-hidden bg-merlot/10 flex items-center justify-center p-6">
+                        <div class="w-40 h-40 border-2 border-gold/60 bg-merlot/5 flex items-center justify-center rounded-sm relative group-hover:scale-105 transition-transform duration-500">
+                            <i class="fa-solid fa-thumbtack text-4xl text-gold"></i>
+                            <div class="absolute bottom-3 right-3 text-merlot text-xs"><i class="fa-solid fa-note-sticky"></i></div>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-merlot text-linen text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 border border-gold/40">
+                            Handcrafted
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="mb-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Office & Home</span>
+                            <h3 class="font-serif text-2xl text-merlot font-medium">Artisanal Pinboards</h3>
+                        </div>
+                        <p class="text-xs text-charcoal/70 font-light mb-6 flex-grow">
+                            High-density upcycled cork notice boards. Ideal for organizing ideas, keepings, and family notes with refined aesthetic.
+                        </p>
+                        <div class="pt-4 border-t border-gold/20 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-charcoal/50 line-through">£22.00</span>
+                                <span class="block text-2xl font-serif text-merlot font-bold">£15.00</span>
+                            </div>
+                            <a href="https://www.etsy.com/uk/shop/CorkieCrafts" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 text-xs uppercase tracking-widest font-semibold text-merlot bg-transparent border border-merlot hover:bg-merlot hover:text-linen transition-colors rounded-sm inline-flex items-center gap-1">
+                                <span>Buy on Etsy</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Christmas Collection Section -->
+    <section id="christmas-collection" class="py-20 bg-linen-dark border-t border-b border-gold/30 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.2em] text-merlot font-semibold">Festive Craftsmanship</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-merlot font-normal mt-1 mb-4">Christmas Collection</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto mb-4"></div>
+                <p class="text-sm text-charcoal/80 font-light">
+                    Warm, rustic festive accents created with love in St Albans to make your holiday season truly memorable.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Festive Item 1: 1ft Christmas Tree -->
+                <div class="bg-linen border border-gold/30 rounded-sm p-6 flex flex-col justify-between hover:border-gold transition-all duration-300">
+                    <div>
+                        <div class="h-48 bg-merlot/5 border border-gold/20 rounded-sm flex items-center justify-center mb-6 text-gold">
+                            <i class="fa-solid fa-tree text-6xl text-merlot"></i>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Centerpiece</span>
+                        <h3 class="font-serif text-2xl text-merlot font-medium mb-2">1ft Christmas Tree</h3>
+                        <p class="text-xs text-charcoal/70 font-light mb-6">
+                            Charming 12-inch tabletop Christmas tree handcrafted entirely from reclaimed wine corks with rustic wooden base.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gold/20 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-charcoal/50 line-through">£28.00</span>
+                            <span class="block text-2xl font-serif text-merlot font-bold">£18.00</span>
+                        </div>
+                        <a href="https://www.etsy.com/uk/shop/CorkieCrafts" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs uppercase tracking-widest font-semibold text-linen bg-merlot hover:bg-gold hover:text-merlot transition-colors rounded-sm inline-flex items-center gap-1">
+                            <span>Order</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Festive Item 2: Small Reindeers Bundle -->
+                <div class="bg-linen border border-gold/30 rounded-sm p-6 flex flex-col justify-between hover:border-gold transition-all duration-300">
+                    <div>
+                        <div class="h-48 bg-merlot/5 border border-gold/20 rounded-sm flex items-center justify-center mb-6 text-gold">
+                            <i class="fa-solid fa-holly-berry text-6xl text-merlot"></i>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Table Accent</span>
+                        <h3 class="font-serif text-2xl text-merlot font-medium mb-2">Small Reindeers</h3>
+                        <p class="text-xs text-charcoal/70 font-light mb-4">
+                            Delightful miniature cork reindeers. Perfect for placesetting decor, mantelpieces, or stocking fillers.
+                        </p>
+                        <!-- Bundle Selector Mock UI -->
+                        <div class="bg-linen-dark p-2 border border-gold/20 rounded-sm text-xs mb-4">
+                            <div class="flex justify-between py-1 border-b border-gold/10">
+                                <span class="font-medium text-charcoal">Single Reindeer:</span>
+                                <span class="font-serif font-bold text-merlot">£1.50</span>
+                            </div>
+                            <div class="flex justify-between py-1">
+                                <span class="font-medium text-charcoal">Pair Option (2x):</span>
+                                <span class="font-serif font-bold text-merlot">£2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-gold/20 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-charcoal/60 uppercase">From</span>
+                            <span class="block text-2xl font-serif text-merlot font-bold">£1.50</span>
+                        </div>
+                        <a href="https://www.etsy.com/uk/shop/CorkieCrafts" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs uppercase tracking-widest font-semibold text-linen bg-merlot hover:bg-gold hover:text-merlot transition-colors rounded-sm inline-flex items-center gap-1">
+                            <span>Order</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Festive Item 3: Handcrafted Wreaths -->
+                <div class="bg-linen border border-gold/30 rounded-sm p-6 flex flex-col justify-between hover:border-gold transition-all duration-300">
+                    <div>
+                        <div class="h-48 bg-merlot/5 border border-gold/20 rounded-sm flex items-center justify-center mb-6 text-gold">
+                            <i class="fa-solid fa-ribbon text-6xl text-merlot"></i>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Door & Wall</span>
+                        <h3 class="font-serif text-2xl text-merlot font-medium mb-2">Handcrafted Wreaths</h3>
+                        <p class="text-xs text-charcoal/70 font-light mb-4">
+                            Elegant circular wreaths woven with corks, pine cones, and gold ribbon accents for a warm welcome.
+                        </p>
+                        <!-- Options Mock UI -->
+                        <div class="bg-linen-dark p-2 border border-gold/20 rounded-sm text-xs mb-4">
+                            <div class="flex justify-between py-1 border-b border-gold/10">
+                                <span class="font-medium text-charcoal">Standard Wreath:</span>
+                                <div>
+                                    <span class="line-through text-[10px] text-charcoal/50 mr-1">£35</span>
+                                    <span class="font-serif font-bold text-merlot">£25.00</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between py-1">
+                                <span class="font-medium text-charcoal">Deluxe Wreath:</span>
+                                <div>
+                                    <span class="line-through text-[10px] text-charcoal/50 mr-1">£42</span>
+                                    <span class="font-serif font-bold text-merlot">£30.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-gold/20 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-charcoal/60 uppercase">From</span>
+                            <span class="block text-2xl font-serif text-merlot font-bold">£25.00</span>
+                        </div>
+                        <a href="https://www.etsy.com/uk/shop/CorkieCrafts" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs uppercase tracking-widest font-semibold text-linen bg-merlot hover:bg-gold hover:text-merlot transition-colors rounded-sm inline-flex items-center gap-1">
+                            <span>Order</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Seasonal Blurred Teasers -->
+    <section id="seasonal-teasers" class="py-20 bg-linen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.2em] text-gold font-semibold">Future Collections</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-merlot font-normal mt-1 mb-4">Upcoming Seasonal Craft</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto mb-4"></div>
+                <p class="text-sm text-charcoal/80 font-light">
+                    A glimpse into our upcoming limited-edition seasonal releases currently being crafted in our workshop.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Valentine's Teaser -->
+                <div class="relative bg-linen-dark border border-gold/30 rounded-sm p-8 overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-merlot/20 to-transparent z-10 pointer-events-none"></div>
+                    <div class="filter blur-sm select-none opacity-50 transition-all duration-500 group-hover:blur-xs">
+                        <div class="flex items-center justify-between mb-4">
+                            <i class="fa-solid fa-heart text-5xl text-merlot"></i>
+                            <span class="text-xs font-serif font-bold text-gold">February Preview</span>
+                        </div>
+                        <h3 class="font-serif text-3xl text-merlot">Valentine's Heart Pinboards & Keepsakes</h3>
+                        <p class="text-xs text-charcoal mt-2">Custom heart-shaped upcycled cork trivets, wine charms, and romance-inspired wall plaques.</p>
+                        <div class="mt-4 inline-block px-4 py-2 bg-gold text-merlot text-xs font-bold uppercase">Coming Soon</div>
+                    </div>
+                    <div class="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center bg-merlot/40 backdrop-blur-md">
+                        <div class="w-12 h-12 rounded-full bg-linen border border-gold flex items-center justify-center text-merlot mb-3">
+                            <i class="fa-solid fa-[#E25822] fa-heart text-xl text-merlot"></i>
+                        </div>
+                        <h4 class="font-serif text-2xl text-linen font-medium">Valentine's Collection</h4>
+                        <p class="text-xs text-linen/90 max-w-xs mt-1 mb-4 font-light">Launching Early February &bull; Romance in Cork</p>
+                        <button onclick="subscribePrompt('Valentine')" class="px-5 py-2 text-[11px] uppercase tracking-widest font-semibold bg-gold text-merlot hover:bg-linen transition-colors rounded-sm shadow">
+                            Notify Me On Launch
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Easter Teaser -->
+                <div class="relative bg-linen-dark border border-gold/30 rounded-sm p-8 overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gold/20 to-transparent z-10 pointer-events-none"></div>
+                    <div class="filter blur-sm select-none opacity-50 transition-all duration-500 group-hover:blur-xs">
+                        <div class="flex items-center justify-between mb-4">
+                            <i class="fa-solid fa-egg text-5xl text-gold-dark"></i>
+                            <span class="text-xs font-serif font-bold text-merlot">Spring Preview</span>
+                        </div>
+                        <h3 class="font-serif text-3xl text-merlot">Spring Easter Bunny Decor & Baskets</h3>
+                        <p class="text-xs text-charcoal mt-2">Botanical cork planters, Easter bunny figurines, and sustainable dining table centerpieces.</p>
+                        <div class="mt-4 inline-block px-4 py-2 bg-merlot text-linen text-xs font-bold uppercase">Coming Soon</div>
+                    </div>
+                    <div class="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center bg-merlot/40 backdrop-blur-md">
+                        <div class="w-12 h-12 rounded-full bg-linen border border-gold flex items-center justify-center text-merlot mb-3">
+                            <i class="fa-solid fa-seedling text-xl text-merlot"></i>
+                        </div>
+                        <h4 class="font-serif text-2xl text-linen font-medium">Easter & Spring Collection</h4>
+                        <p class="text-xs text-linen/90 max-w-xs mt-1 mb-4 font-light">Launching Spring &bull; Botanical & Bunny Crafts</p>
+                        <button onclick="subscribePrompt('Easter')" class="px-5 py-2 text-[11px] uppercase tracking-widest font-semibold bg-gold text-merlot hover:bg-linen transition-colors rounded-sm shadow">
+                            Notify Me On Launch
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage & Location Story -->
+    <section id="about" class="py-20 bg-linen-dark border-t border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs uppercase tracking-[0.2em] text-gold font-semibold">St Albans Hertfordshire</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl text-merlot font-normal leading-tight">
+                        Crafted with Purpose, <br>
+                        <span class="italic text-gold-dark">Sourced with Responsibility.</span>
+                    </h2>
+                    <p class="text-sm text-charcoal/80 font-light leading-relaxed">
+                        Based in historic St Albans, Hertfordshire, Corkie Crafts was born out of a desire to prevent natural wine corks from entering landfills. Cork oak bark is one of the most eco-friendly materials on Earth—harvested without cutting down a single tree.
+                    </p>
+                    <p class="text-sm text-charcoal/80 font-light leading-relaxed">
+                        We meticulously sort, treat, and design every individual piece to create charming home decor that adds warmth, rich organic texture, and a touch of heritage to your living spaces.
+                    </p>
+                    <div class="pt-2">
+                        <a href="mailto:corkie.crafts@gmail.com" class="inline-flex items-center text-xs uppercase tracking-widest font-semibold text-merlot hover:text-gold transition-colors">
+                            <i class="fa-solid fa-envelope mr-2 text-gold"></i> Direct Inquiry: corkie.crafts@gmail.com
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="bg-linen p-8 border border-gold/40 rounded-sm shadow-md text-center">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-merlot text-gold flex items-center justify-center text-2xl mb-4 border border-gold/40">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h3 class="font-serif text-3xl text-merlot mb-2">Visit Us In St Albans</h3>
+                        <p class="text-xs text-charcoal/70 max-w-md mx-auto mb-6">
+                            While our primary shop is hosted on Etsy for worldwide delivery, we proudly participate in local Hertfordshire markets and artisan fairs.
+                        </p>
+                        <div class="inline-block px-6 py-3 bg-linen-dark border border-gold/30 rounded-sm text-xs font-medium text-merlot">
+                            <i class="fa-solid fa-map-pin text-gold mr-1.5"></i> St Albans, Hertfordshire, UK
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription Section -->
+    <section class="py-16 bg-merlot text-linen relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <i class="fa-solid fa-paper-plane text-3xl text-gold mb-4 block"></i>
+            <h2 class="font-serif text-3xl sm:text-4xl font-normal text-linen mb-3">Join The Corkie Crafts Circle</h2>
+            <p class="text-xs sm:text-sm text-linen/80 font-light max-w-xl mx-auto mb-8">
+                Subscribe to receive private workshop updates, seasonal release announcements, and artisanal decor tips directly to your inbox.
+            </p>
+
+            <form id="newsletter-form" onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input type="email" id="newsletter-email" required placeholder="Enter your email address..." class="flex-grow px-4 py-3 bg-linen/10 border border-gold/40 rounded-sm text-xs text-linen placeholder-linen/50 focus:outline-none focus:border-gold">
+                <button type="submit" class="px-6 py-3 bg-gold text-merlot hover:bg-linen hover:text-merlot text-xs uppercase tracking-widest font-semibold transition-colors rounded-sm">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-linen">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs uppercase tracking-[0.2em] text-gold font-semibold">Get In Touch</span>
+                <h2 class="font-serif text-4xl text-merlot font-normal mt-1 mb-2">Send Us A Message</h2>
+                <div class="w-12 h-0.5 bg-gold mx-auto mb-4"></div>
+                <p class="text-xs text-charcoal/70 font-light">
+                    Have questions about our crafts or Etsy listings? Reach out directly to <a href="mailto:corkie.crafts@gmail.com" class="text-merlot underline">corkie.crafts@gmail.com</a>
+                </p>
+            </div>
+
+            <form action="https://formsubmit.co/corkie.crafts@gmail.com" method="POST" onsubmit="handleFormSubmit(event)" class="bg-linen-dark border border-gold/30 p-8 rounded-sm shadow-sm space-y-6">
+                <!-- FormSubmit Configuration Hidden Inputs -->
+                <input type="hidden" name="_subject" value="New Website Contact Form Submission - Corkie Crafts">
+                <input type="hidden" name="_captcha" value="false">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="contact-name" class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-2">Your Name</label>
+                        <input type="text" id="contact-name" name="name" required class="w-full px-4 py-3 bg-linen border border-gold/30 rounded-sm text-xs text-charcoal focus:outline-none focus:border-gold">
+                    </div>
+                    <div>
+                        <label for="contact-email" class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-2">Email Address</label>
+                        <input type="email" id="contact-email" name="email" required class="w-full px-4 py-3 bg-linen border border-gold/30 rounded-sm text-xs text-charcoal focus:outline-none focus:border-gold">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="contact-subject" class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-2">Subject</label>
+                    <input type="text" id="contact-subject" name="subject" required class="w-full px-4 py-3 bg-linen border border-gold/30 rounded-sm text-xs text-charcoal focus:outline-none focus:border-gold">
+                </div>
+
+                <div>
+                    <label for="contact-message" class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-2">Message</label>
+                    <textarea id="contact-message" name="message" rows="5" required class="w-full px-4 py-3 bg-linen border border-gold/30 rounded-sm text-xs text-charcoal focus:outline-none focus:border-gold"></textarea>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="px-8 py-3.5 bg-merlot text-linen hover:bg-gold hover:text-merlot transition-colors text-xs uppercase tracking-widest font-semibold rounded-sm shadow-sm border border-gold/30">
+                        Send Message To Corkie Crafts
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-merlot-dark text-linen pt-16 pb-12 border-t-2 border-gold/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-gold/20">
+                
+                <!-- Brand Column -->
+                <div class="md:col-span-2 space-y-4">
+                    <span class="font-serif text-3xl font-bold tracking-tight text-linen block">
+                        Corkie Crafts
+                    </span>
+                    <p class="text-xs text-linen/70 font-light leading-relaxed max-w-sm">
+                        Sustainable upcycled cork home decor handcrafted in St Albans, Hertfordshire, United Kingdom. Bringing rustic luxury and eco-conscious design to modern interiors.
+                    </p>
+                    <div class="pt-2 text-xs text-gold">
+                        <i class="fa-solid fa-location-dot mr-1.5"></i> St Albans, Hertfordshire, UK
+                    </div>
+                </div>
+
+                <!-- Navigation Quick Links -->
+                <div>
+                    <h4 class="font-serif text-lg font-medium text-gold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-xs text-linen/80">
+                        <li><a href="#about" class="hover:text-gold transition-colors">Our Story & Heritage</a></li>
+                        <li><a href="#core-collection" class="hover:text-gold transition-colors">Core Collection</a></li>
+                        <li><a href="#christmas-collection" class="hover:text-gold transition-colors">Christmas Decor</a></li>
+                        <li><a href="#seasonal-teasers" class="hover:text-gold transition-colors">Upcoming Releases</a></li>
+                        <li><a href="#contact" class="hover:text-gold transition-colors">Contact Workshop</a></li>
+                    </ul>
+                </div>
+
+                <!-- Direct Contact -->
+                <div>
+                    <h4 class="font-serif text-lg font-medium text-gold mb-4">Direct Contact</h4>
+                    <p class="text-xs text-linen/80 mb-3 font-light">
+                        For direct inquiries or store questions:
+                    </p>
+                    <a href="mailto:corkie.crafts@gmail.com" class="text-xs text-gold underline hover:text-linen transition-colors block mb-4">
+                        corkie.crafts@gmail.com
+                    </a>
+                    <a href="https://www.etsy.com/uk/shop/CorkieCrafts" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-gold/10 border border-gold/40 text-gold text-xs hover:bg-gold hover:text-merlot transition-colors rounded-sm">
+                        <i class="fa-brands fa-etsy mr-2 text-sm"></i> Official Etsy Shop
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-linen/50">
+                <p>&copy; <span id="year"></span> Corkie Crafts (corkiecrafts.co.uk). All rights reserved.</p>
+                <p class="mt-2 sm:mt-0">Handcrafted in St Albans, Hertfordshire, UK</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Email Quick Button -->
+    <a href="mailto:corkie.crafts@gmail.com" class="fixed bottom-6 right-6 z-40 bg-merlot text-gold hover:bg-gold hover:text-merlot p-4 rounded-full shadow-2xl border-2 border-gold transition-all duration-300 transform hover:scale-110 flex items-center justify-center group" title="Email Corkie Crafts">
+        <i class="fa-solid fa-envelope text-xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out text-xs font-semibold uppercase tracking-wider pl-0 group-hover:pl-2">
+            corkie.crafts@gmail.com
+        </span>
+    </a>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Custom Toast Notification System
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            
+            toast.className = `pointer-events-auto px-5 py-3.5 rounded-sm shadow-xl border border-gold/40 text-xs font-medium flex items-center gap-3 transition-all duration-300 transform translate-y-2 opacity-0 ${
+                type === 'success' ? 'bg-merlot text-linen' : 'bg-gold text-merlot'
+            }`;
+            
+            toast.innerHTML = `
+                <i class="fa-solid ${type === 'success' ? 'fa-circle-check text-gold' : 'fa-circle-info text-merlot'} text-base"></i>
+                <span>${message}</span>
+            `;
+
+            container.appendChild(toast);
+
+            // Animate In
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+
+            // Animate Out & Remove
+            setTimeout(() => {
+                toast.classList.add('translate-y-2', 'opacity-0');
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, 4000);
+        }
+
+        // Handle Form Submissions
+        function handleFormSubmit(event) {
+            showToast('Thank you! Sending your message to corkie.crafts@gmail.com...');
+        }
+
+        function handleNewsletter(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('newsletter-email');
+            if (emailInput.value) {
+                showToast(`Thank you! ${emailInput.value} has been subscribed to our updates.`);
+                emailInput.value = '';
+            }
+        }
+
+        function subscribePrompt(season) {
+            showToast(`Registered for ${season} Collection launch notifications!`);
+        }
+    </script>
+</body>
+</html>
